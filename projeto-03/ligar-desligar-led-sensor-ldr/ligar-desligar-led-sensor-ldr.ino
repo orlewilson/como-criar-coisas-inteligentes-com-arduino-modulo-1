@@ -42,14 +42,15 @@ void loop() {
   
   
   // ler o valor atual do sensor de luminosidade
-  // o valor varia entre 0 (escuro) e 1023 (claro)
+  // quanto mais próximo de zero está mais escuro e quanto mais afastado de zero está mais claro
+  // esse valor varia conforme o resistor
   valorLuminosidade = analogRead(luminosidade);
   
   // imprime na porta serial o valor do sensor de luminosidade
   Serial.println(valorLuminosidade);
   
-  // se o valor for menor que 300, ligara o LED
-  if (valorLuminosidade < 100){
+  // se o valor for menor que 300, ligara o LED (você ajusta conforme o resistor)
+  if (valorLuminosidade < 300){
     ligarLed();
   } else {
     desligarLed();
