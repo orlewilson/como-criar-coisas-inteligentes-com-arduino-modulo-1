@@ -7,7 +7,7 @@
 */
 
 // Porta digital no qual sera colocado um LED para ser ligado e desligado
-int led = 11;
+int led = 13;
 
 // Função para ligar LED
 void ligarLED(){
