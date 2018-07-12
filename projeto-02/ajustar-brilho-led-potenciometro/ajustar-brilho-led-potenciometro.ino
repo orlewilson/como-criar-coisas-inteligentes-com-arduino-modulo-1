@@ -51,6 +51,8 @@ void loop() {
   
   // Transformo o valor lido do potenciômetro de 0 a 1023 para 0 a 255 dividindo por 4
   ligarLED(valorPotenciometro/4);
+  // função map mapeia valores a partir de um intervalo
+  // map(valor, valor_inicial_antigo, valor_final_antigo, valor_inicial_novo, valor_final_novo)
   //ligarLED(map(valorPotenciometro,0,1023,0,255));
   
   atraso(1);
