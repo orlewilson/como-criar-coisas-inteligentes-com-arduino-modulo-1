@@ -9,6 +9,7 @@
 
 // Porta digital no qual sera colocado um LED vermelho
 int buzzerPorta = 11;
+
 float seno;
 int frequencia;
 
@@ -25,7 +26,7 @@ void tocarFrequencia(){
 }
 void setup() {
   // Indica qual porta digital será utilizada como saida do buzzer
- pinMode(buzzerPorta,OUTPUT);
+  pinMode(buzzerPorta,OUTPUT);
 }
 
 void loop() {
