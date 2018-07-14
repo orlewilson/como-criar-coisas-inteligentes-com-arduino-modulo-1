@@ -7,7 +7,7 @@
   Fonte:             https://portal.vidadesilicio.com.br/usando-o-buzzer-com-arduino-transdutor-piezo-eletrico/
 */
 
-// Porta digital no qual sera colocado um LED vermelho
+// Porta digital no qual sera colocado o buzzer
 int buzzerPorta = 11;
 
 float seno;
