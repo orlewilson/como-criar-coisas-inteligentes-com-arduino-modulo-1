@@ -7,12 +7,12 @@
   Fonte:             https://portal.vidadesilicio.com.br/hc-sr04-sensor-ultrassonico/
 */
 
-//Biblioteca do sensor ultrassonico
+//Biblioteca do sensor ultrassônico
 #include <Ultrasonic.h>
 
 //Define os pinos para o trigger e echo
-#define triggerPorta 4
-#define echoPorta 5
+#define triggerPorta 5
+#define echoPorta 4
 
 //Inicializa o sensor nos pinos definidos acima
 Ultrasonic ultrassom(triggerPorta, echoPorta);
