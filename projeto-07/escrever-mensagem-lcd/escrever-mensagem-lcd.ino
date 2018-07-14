@@ -4,57 +4,56 @@
   Data Criacao:      13/07/2018
   Data Atualizao:    13/07/2018
   Descricao:         Escrever uma mensagem em uma tela LCD 16x2
+  Fonte:             https://portal.vidadesilicio.com.br/display-lcd-16x2-com-arduino/
 */
 
+#include <LiquidCrystal.h>     //inclui biblioteca no programa 
 
-// Porta digital no qual sera colocado um LED para ser ligado e desligado
-int led = 11;
+LiquidCrystal lcd(2,3,4,5,6,7);
+/*Cria objeto lcd da classe LiquidCrystal
+RS     2
+Enable 3
+DB4    4
+DB5    5
+DB6    6
+DB7    7
+*/
 
-// Porta analogica no qual sera lido o valor do potenciometro
-int potenciometro = A0;
-
-// Variavel para armazenar o valor lido do potenciometro
-int valorPotenciometro = 0;
-
-// Função para ligar LED ajustando o brilho
-void ligarLED(int brilho){
-  analogWrite(led, brilho);
-}
-
-// Função para atrasar em n segundos
-void atraso (int n){
-
-   // Funcao do Arduino para parar durante um certo tempo em milisegundos (ms)
-  delay(1000 * n); // atraso em n segundos
+void setup(){
+  //Inicializa display de 2 linhas x 16 colunas
+  lcd.begin(16,2);            
   
-}
+  //Posiciona cursor no canto superior esquerdo
+  lcd.home();      
 
-// Funcao para configurar o Arduino
-void setup() {                
+  //Executa uma pequena contagem regressiva
+  lcd.print("3 ");           
+  delay(500);
+  lcd.print("2 ");
+  delay(500);
+  lcd.print("1 ");
+  delay(500);
 
-  // Indica qual porta analógica sera utilizada como saida (ligar/desligar um LED)
-  pinMode(led, OUTPUT);
-
-  // Indica que utilizara a porta serial para imprimir
-  Serial.begin(9600);
-
-}
-
-// Funcao principal do Arduino que ficara em loop infinito
-void loop() {
-
-  // ler o valor atual do potenciometro
-  // o valor varia entre 0 e 1023
-  valorPotenciometro = analogRead(potenciometro);
-
-  // imprime na porta serial o valor do potenciômetro
-  Serial.println(valorPotenciometro);
+  //Limpa a tela do LCD
+  lcd.clear();       
   
-  // Transformo o valor lido do potenciômetro de 0 a 1023 para 0 a 255 dividindo por 4
-  ligarLED(valorPotenciometro/4);
-  // função map mapeia valores a partir de um intervalo
-  // map(valor, valor_inicial_antigo, valor_final_antigo, valor_inicial_novo, valor_final_novo)
-  //ligarLED(map(valorPotenciometro,0,1023,0,255));
+  delay(500);
+
+  //Posiciona o cursor na posição coluna X linha (6,0)
+  lcd.setCursor(6,0);         
+
+  //Escreve IoT
+  lcd.print("IoT");  
+
+  delay(500);
+
+  //Posiciona o cursor na posição coluna X linha (4,1)
+  lcd.setCursor(4,1);
   
-  atraso(1);
+  //Escreve Modulo 1
+  lcd.print("Modulo 1");
+}
+ 
+void loop(){
+ 
 }
