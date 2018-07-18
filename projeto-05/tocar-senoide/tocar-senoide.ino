@@ -1,11 +1,14 @@
 /*
   Como Criar Coisas Inteligentes com Arduino - Módulo 1
   Facilitador:       Prof. Orlewilson Bentes Maia
-  Data Criacao:      13/07/2018
-  Data Atualizao:    13/07/2018
+  Data Criacao:      14/07/2018
+  Data Atualizacao:  14/07/2018
   Descricao:         Tocar uma senoide
   Fonte:             https://portal.vidadesilicio.com.br/usando-o-buzzer-com-arduino-transdutor-piezo-eletrico/
 */
+
+
+
 
 // Porta digital no qual sera colocado o buzzer
 int buzzerPorta = 11;
@@ -24,6 +27,7 @@ void tocarFrequencia(){
     delay(2);
   }
 }
+
 void setup() {
   // Indica qual porta digital será utilizada como saida do buzzer
   pinMode(buzzerPorta,OUTPUT);
@@ -32,3 +36,6 @@ void setup() {
 void loop() {
   tocarFrequencia();
 }
+
+
+
